@@ -5,6 +5,9 @@ module FriendlyId
       # Experimental Sequel support. See: http://github.com/norman/friendly_id_sequel
       if app.config.generators.rails[:orm] == :sequel
         require "friendly_id/sequel"
+      # Experimental Mongoid support. See: http://github.com/malagant/friendly_id_mongoid
+      elsif app.config.generators.rails[:orm] == :mongoid
+        require 'friendly_id/mongoid'
       # Experimental DataMapper support. See: http://github.com/myabc/friendly_id_datamapper
       elsif app.config.generators.rails[:orm] == :data_mapper
         require 'friendly_id/datamapper'
